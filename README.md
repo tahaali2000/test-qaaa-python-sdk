@@ -11,11 +11,11 @@ The package is compatible with Python versions `3.7+`.
 Install the package from PyPi using the following pip command:
 
 ```bash
-pip install test-qaaa-sdk==1.3.0
+pip install test-qaaa-sdk==2.3.3
 ```
 
 You can also view the package at:
-https://pypi.python.org/pypi/test-qaaa-sdk/1.3.0
+https://pypi.python.org/pypi/test-qaaa-sdk/2.3.3
 
 ## Test the SDK
 
@@ -30,7 +30,7 @@ pytest
 
 ## Initialize the API Client
 
-**_Note:_** Documentation for the client can be found [here.](https://www.github.com/tahaali2000/test-qaaa-python-sdk/tree/1.3.0/doc/client.md)
+**_Note:_** Documentation for the client can be found [here.](https://www.github.com/tahaali2000/test-qaaa-python-sdk/tree/2.3.3/doc/client.md)
 
 The following parameters are configurable for the API Client:
 
@@ -55,19 +55,19 @@ client = PaginationtesterClient(
 
 ## List of APIs
 
-* [Transaction](https://www.github.com/tahaali2000/test-qaaa-python-sdk/tree/1.3.0/doc/controllers/transaction.md)
+* [Transaction](https://www.github.com/tahaali2000/test-qaaa-python-sdk/tree/2.3.3/doc/controllers/transaction.md)
 
 ## SDK Infrastructure
 
 ### HTTP
 
-* [HttpResponse](https://www.github.com/tahaali2000/test-qaaa-python-sdk/tree/1.3.0/doc/http-response.md)
-* [HttpRequest](https://www.github.com/tahaali2000/test-qaaa-python-sdk/tree/1.3.0/doc/http-request.md)
+* [HttpResponse](https://www.github.com/tahaali2000/test-qaaa-python-sdk/tree/2.3.3/doc/http-response.md)
+* [HttpRequest](https://www.github.com/tahaali2000/test-qaaa-python-sdk/tree/2.3.3/doc/http-request.md)
 
 ### Utilities
 
-* [ApiHelper](https://www.github.com/tahaali2000/test-qaaa-python-sdk/tree/1.3.0/doc/api-helper.md)
-* [HttpDateTime](https://www.github.com/tahaali2000/test-qaaa-python-sdk/tree/1.3.0/doc/http-date-time.md)
-* [RFC3339DateTime](https://www.github.com/tahaali2000/test-qaaa-python-sdk/tree/1.3.0/doc/rfc3339-date-time.md)
-* [UnixDateTime](https://www.github.com/tahaali2000/test-qaaa-python-sdk/tree/1.3.0/doc/unix-date-time.md)
+* [ApiHelper](https://www.github.com/tahaali2000/test-qaaa-python-sdk/tree/2.3.3/doc/api-helper.md)
+* [HttpDateTime](https://www.github.com/tahaali2000/test-qaaa-python-sdk/tree/2.3.3/doc/http-date-time.md)
+* [RFC3339DateTime](https://www.github.com/tahaali2000/test-qaaa-python-sdk/tree/2.3.3/doc/rfc3339-date-time.md)
+* [UnixDateTime](https://www.github.com/tahaali2000/test-qaaa-python-sdk/tree/2.3.3/doc/unix-date-time.md)
 
