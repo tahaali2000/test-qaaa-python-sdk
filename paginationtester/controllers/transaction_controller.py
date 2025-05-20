@@ -14,9 +14,9 @@ from apimatic_core.request_builder import RequestBuilder
 from apimatic_core.response_handler import ResponseHandler
 from apimatic_core.types.parameter import Parameter
 from paginationtester.http.http_method_enum import HttpMethodEnum
-from paginationtester.models.transactions_offset import TransactionsOffset
 from paginationtester.models.transactions_cursored import TransactionsCursored
 from paginationtester.models.transactions_linked import TransactionsLinked
+from paginationtester.models.transactions_offset import TransactionsOffset
 
 
 class TransactionController(BaseController):
@@ -24,49 +24,6 @@ class TransactionController(BaseController):
     """A Controller to access Endpoints in the paginationtester API."""
     def __init__(self, config):
         super(TransactionController, self).__init__(config)
-
-    def fetch_with_offset(self,
-                          offset=0,
-                          limit=10):
-        """Does a GET request to /transactions/offset.
-
-        Fetch transactions using Offset-based Pagination
-
-        Args:
-            offset (int, optional): The number of records to skip before
-                selecting transactions.
-            limit (int, optional): Number of transactions per page.
-
-        Returns:
-            TransactionsOffset: Response from the API. Paginated list of
-                transactions (Offset-based)
-
-        Raises:
-            APIException: When an error occurs while fetching the data from
-                the remote API. This exception includes the HTTP Response
-                code, an error message, and the HTTP body that was received in
-                the request.
-
-        """
-
-        return super().new_api_call_builder.request(
-            RequestBuilder().server(Server.DEFAULT)
-            .path('/transactions/offset')
-            .http_method(HttpMethodEnum.GET)
-            .query_param(Parameter()
-                         .key('offset')
-                         .value(offset))
-            .query_param(Parameter()
-                         .key('limit')
-                         .value(limit))
-            .header_param(Parameter()
-                          .key('accept')
-                          .value('application/json'))
-        ).response(
-            ResponseHandler()
-            .deserializer(APIHelper.json_deserialize)
-            .deserialize_into(TransactionsOffset.from_dictionary)
-        ).execute()
 
     def fetch_with_cursor(self,
                           cursor=None,
@@ -151,4 +108,47 @@ class TransactionController(BaseController):
             ResponseHandler()
             .deserializer(APIHelper.json_deserialize)
             .deserialize_into(TransactionsLinked.from_dictionary)
+        ).execute()
+
+    def fetch_with_offset(self,
+                          offset=0,
+                          limit=10):
+        """Does a GET request to /transactions/offset.
+
+        Fetch transactions using Offset-based Pagination
+
+        Args:
+            offset (int, optional): The number of records to skip before
+                selecting transactions.
+            limit (int, optional): Number of transactions per page.
+
+        Returns:
+            TransactionsOffset: Response from the API. Paginated list of
+                transactions (Offset-based)
+
+        Raises:
+            APIException: When an error occurs while fetching the data from
+                the remote API. This exception includes the HTTP Response
+                code, an error message, and the HTTP body that was received in
+                the request.
+
+        """
+
+        return super().new_api_call_builder.request(
+            RequestBuilder().server(Server.DEFAULT)
+            .path('/transactions/offset')
+            .http_method(HttpMethodEnum.GET)
+            .query_param(Parameter()
+                         .key('offset')
+                         .value(offset))
+            .query_param(Parameter()
+                         .key('limit')
+                         .value(limit))
+            .header_param(Parameter()
+                          .key('accept')
+                          .value('application/json'))
+        ).response(
+            ResponseHandler()
+            .deserializer(APIHelper.json_deserialize)
+            .deserialize_into(TransactionsOffset.from_dictionary)
         ).execute()
